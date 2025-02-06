@@ -14,7 +14,7 @@ import (
 	_ "github.com/jackc/pgx/v4/stdlib"
 )
 
-const webPort = "9090"
+const webPort = "80"
 
 type Config struct {
 	DB     *sql.DB
@@ -22,7 +22,7 @@ type Config struct {
 }
 
 func main() {
-	log.Println("Starting authentication service")
+	log.Printf("Starting authentication service on port %s", webPort)
 
 	conn := connectToDB()
 	if conn == nil {
