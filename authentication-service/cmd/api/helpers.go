@@ -17,7 +17,6 @@ func (app *Config) readJSON(w http.ResponseWriter, r *http.Request, data any) er
 	maxBytes := 1048576 // one megabyte
 
 	r.Body = http.MaxBytesReader(w, r.Body, int64(maxBytes))
-
 	dec := json.NewDecoder(r.Body)
 	err := dec.Decode(data)
 	if err != nil {
