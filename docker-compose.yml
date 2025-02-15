@@ -114,6 +114,8 @@ services:
       replicas: 1
     volumes:
       - ./db-data/rabbitmq:/var/lib/rabbitmq/
+    networks:
+      - myapp-network
 
 networks:
   myapp-network:
